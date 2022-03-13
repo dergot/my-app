@@ -1,0 +1,67 @@
+.header {
+	background-image: url('../../images/bkg5.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.header_text {
+	/*height: 100px;*/
+	/*background-image: url("images/x1.png");*/
+	/*background-position: center;*/
+	/*background-size: cover;*/
+	margin: 100px 0;
+	text-transform: uppercase;
+	font-family: 'Paytone One', sans-serif;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand-img {
+	height: 40px;
+}
+
+.burger-menu-btn {
+	height: 40px;
+}
+
+.offcanvas-body {
+	text-transform: uppercase;
+}
+
+.dropdown-toggle {
+	color: black;
+	font-weight: 700;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+	color: black;
+}
+
+.dropdown-menu {
+	border: 0 !important;
+}
+
+.main_section_title {
+	color: #f2c64d;
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+}
+
+.section-description {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+.section-best {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	color: #1a0d01;
+	font-size: 30px;
+}
+
+@media (max-width: 767px) {
+	.offcanvas-end {
+		width: 50%;
+	}
+}
