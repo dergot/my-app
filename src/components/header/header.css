@@ -1,3 +1,7 @@
+a {
+	text-decoration: none;
+}
+
 .header {
 	background-image: url('../../images/bkg5.jpg');
 	background-size: cover;
@@ -40,24 +44,6 @@
 
 .dropdown-menu {
 	border: 0 !important;
-}
-
-.main_section_title {
-	color: #f2c64d;
-	font-family: 'Pacifico', cursive;
-	font-size: 30px;
-}
-
-.section-description {
-	font-family: 'Raleway', sans-serif;
-	font-weight: 300;
-}
-
-.section-best {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 700;
-	color: #1a0d01;
-	font-size: 30px;
 }
 
 @media (max-width: 767px) {

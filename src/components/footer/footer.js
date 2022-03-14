@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Image, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import FooterLogo from '../../images/logo-footer-new2.png';
 import './footer.css';
 
@@ -23,12 +24,12 @@ function Footer() {
 							<Col sm={10} md={6} className='mt-4 mb-4'>
 								<Row>
 									<Col className='col-4 text-center'>
-										<a
-											href='contacts.php'
+										<Link
+											to='contacts'
 											className='text-decoration-none text-black'
 										>
 											KONTAKTY
-										</a>
+										</Link>
 									</Col>
 									<Col className='col-4 text-center'>
 										<a
@@ -49,17 +50,17 @@ function Footer() {
 									</Col>
 								</Row>
 								<Row>
-									<div className='col-12 text-center pt-3'>
+									<Col className='col-12 text-center pt-3'>
 										<a
 											href='vop.php'
 											className='text-decoration-none text-black'
 										>
 											Všeobecné obchodné podmienky
 										</a>
-									</div>
+									</Col>
 								</Row>
 							</Col>
-							<div className='col-sm-1 col-md-3'></div>
+							<Col sm={1} md={3}></Col>
 						</Row>
 					</Col>
 					<Col className='col-12 text-center footer_copyright'>

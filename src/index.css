@@ -16,3 +16,9 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
 }
+
+.main_section_title {
+	color: #f2c64d;
+	font-family: 'Pacifico', cursive;
+	font-size: 30px;
+}

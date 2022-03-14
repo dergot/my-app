@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
 	Container,
 	Navbar,
@@ -27,7 +28,7 @@ function OffCanvasExample({ name, ...props }) {
 				className='navbar-toggler burger-menu-btn bg-black d-flex align-items-center'
 			>
 				<p className='text-white my-0'>{name}</p>
-				<i class='fs-1 bi bi-list text-white'></i>
+				<i className='fs-1 bi bi-list text-white'></i>
 			</Button>
 			<Offcanvas show={show} onHide={handleClose} {...props}>
 				<Offcanvas.Header closeButton>
@@ -35,9 +36,9 @@ function OffCanvasExample({ name, ...props }) {
 				</Offcanvas.Header>
 				<Offcanvas.Body>
 					<Nav className='me-auto my-2 my-lg-0'>
-						<Nav.Link className='text-black active' href='#home'>
+						<Link to='/' className='text-black active'>
 							Home
-						</Nav.Link>
+						</Link>
 						<NavDropdown title='Menu' id='navbarScrollingDropdown'>
 							<NavDropdown.Item className='text-black' href='#new'>
 								NEW
@@ -70,12 +71,16 @@ function OffCanvasExample({ name, ...props }) {
 								DRINKS
 							</NavDropdown.Item>
 						</NavDropdown>
-						<Nav.Link className='text-black' href='#'>
+						<Link to='/about' className='text-black'>
 							About Us
-						</Nav.Link>
-						<Nav.Link className='text-black' href='#'>
+						</Link>
+						<Link to='/contacts' className='text-black'>
 							Contacts
-						</Nav.Link>
+						</Link>
+
+						<Link to='/cart' className='text-black'>
+							Cart
+						</Link>
 					</Nav>
 				</Offcanvas.Body>
 			</Offcanvas>
@@ -98,9 +103,9 @@ function Header() {
 		<header className='header'>
 			<Navbar expand='lg'>
 				<Container fluid>
-					<Navbar.Brand href='#'>
+					<Link to='/' className='navbar-brand'>
 						<Image className='navbar-brand-img' src={LogoImg} alt='#'></Image>
-					</Navbar.Brand>
+					</Link>
 					<Example></Example>
 				</Container>
 			</Navbar>
