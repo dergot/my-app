@@ -1,0 +1,39 @@
+@media (max-width: 767px) {
+	.popular_card {
+		max-width: 540px;
+	}
+}
+
+.popular_card_image {
+	position: relative;
+}
+
+.popular_card_price {
+	border-radius: 35px 0 0 0;
+	background: linear-gradient(
+		328deg,
+		rgba(61, 61, 61, 1) 40%,
+		rgba(185, 185, 185, 0.2) 100%
+	);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.card_add_to_cart_btn {
+	background-color: #f2c64d !important;
+	margin-left: 20px;
+	border-color: #f2c64d;
+}
+
+.card-image {
+	object-fit: cover;
+	object-position: center;
+	height: 100%;
+}
+
+@media (min-width: 767px) {
+	.popular_card_price {
+		font-size: 20px !important;
+	}
+}
