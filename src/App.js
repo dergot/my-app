@@ -5,6 +5,7 @@ import Header from './components/header/header.js';
 import HomePageMain from './pages/HomePage/HomePageMain.js';
 import AboutPageMain from './pages/AboutPage/AboutPageMain.js';
 import ContactsPageMain from './pages/ContactsPage/ContactsPageMain.js';
+import CartPage from './pages/CartPage';
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route path='/' element={<HomePageMain />} />
 					<Route path='about' element={<AboutPageMain />} />
 					<Route path='contacts' element={<ContactsPageMain />} />
+					<Route path='cart' element={<CartPage />} />
 				</Routes>
 				<Footer></Footer>
 			</div>
