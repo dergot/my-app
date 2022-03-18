@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
 import './HomePageMain.css';
 import { ProductCard } from '../../components/ProductCard/productCard.js';
+import Modals from '../../components/Modal/Modal';
 
 const Home = () => {
 	return (

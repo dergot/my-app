@@ -1,3 +1,7 @@
+.popular_card {
+	border: 1px solid #ffffff !important;
+}
+
 @media (max-width: 767px) {
 	.popular_card {
 		max-width: 540px;
@@ -19,12 +23,29 @@
 	bottom: 0;
 	right: 0;
 }
-
+/* 
 .card_add_to_cart_btn {
-	background-color: #f2c64d !important;
+	color: #ff4646 !important;
 	margin-left: 20px;
-	border-color: #f2c64d;
+	border-color: #ff4646 !important;
+	background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
 }
+
+.card_add_to_cart_btn:active {
+	color: white !important;
+	border-color: #ff4646 !important;
+	background-color: #ff4646 !important;
+}
+
+.card_add_to_cart_btn:hover {
+	color: white !important;
+	border-color: #ff4646 !important;
+	background-color: #ff4646 !important;
+}
+
+.card_add_to_cart_btn :focus {
+	box-shadow: 0 0 0 0.25rem #ff4646 !important;
+} */
 
 .card-image {
 	object-fit: cover;

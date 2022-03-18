@@ -20,11 +20,11 @@
 	right: 0;
 }
 
-.card_add_to_cart_btn {
+/* .card_add_to_cart_btn {
 	background-color: #f2c64d !important;
 	margin-left: 20px;
 	border-color: #f2c64d;
-}
+} */
 
 .card-image {
 	object-fit: cover;
