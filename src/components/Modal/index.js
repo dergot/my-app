@@ -64,7 +64,15 @@ const ProductModal = ({ visible, item: propsItem, handleClose }) => {
 										className='fs-1 text-white py-2 px-3 popular_card_price'
 										key={`product_price_${item.price}`}
 									>
-										{item.price}€
+										{Number(item.price) +
+											_.get(item, 'attachments', [])
+												.filter(({ checked }) => checked)
+												.reduce(
+													(prevValue, attachment) =>
+														prevValue + Number(attachment.price),
+													0
+												)}
+										€
 									</strong>
 								</div>
 							</Col>
@@ -119,7 +127,12 @@ const ProductModal = ({ visible, item: propsItem, handleClose }) => {
 
 							<InputGroup className='mb-3' style={{ width: '30%' }}>
 								<InputGroup.Checkbox
-									checked={attachment.included === '1'}
+									onChange={(e) => {
+										attachment.checked = e.target.checked;
+										setItem(item);
+										console.log(e.target.checked);
+									}}
+									defaultChecked={attachment.included === '1'}
 									disabled={attachment.fixed === '1'}
 									aria-label='Checkbox for following text input'
 								/>
