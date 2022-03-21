@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import _ from 'lodash';
 import {
 	Button,
 	Card,
@@ -22,22 +23,21 @@ import { Counter } from '../../components';
 const url = `https://www.flexx.co/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png`;
 
 const ProductModal = ({ visible, item: propsItem, handleClose }) => {
-	// const [show, setShow] = useState(false);
-
-	const [attachments, setAttachments] = useState([]);
-	const item = propsItem || {};
+	const [item, setItem] = useState({});
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		if (item.id) {
-			fetch(`http://demo.pasakebap.sk/products_attachments.php?id=${item.id}`)
+		if (_.get(propsItem, 'id')) {
+			fetch(
+				`http://demo.pasakebap.sk/products_attachments.php?id=${propsItem.id}`
+			)
 				.then((res) => res.json())
 				.then((result) => {
-					setAttachments(result || []);
-					console.log(result);
+					setItem({ ...propsItem, attachments: result || [] });
 				});
+			console.log(propsItem);
 		}
-	}, [item]);
+	}, [propsItem]);
 
 	return (
 		<>
@@ -108,7 +108,7 @@ const ProductModal = ({ visible, item: propsItem, handleClose }) => {
 							</Col>
 						</Row>
 					</Card>
-					{attachments.map((attachment) => (
+					{_.get(item, 'attachments', []).map((attachment) => (
 						<div className='my-3 d-flex justify-content-between'>
 							<div style={{ width: '30%' }}>
 								<strong>Name: {attachment.name_sk}</strong>
@@ -116,32 +116,15 @@ const ProductModal = ({ visible, item: propsItem, handleClose }) => {
 							<div style={{ width: '30%' }}>
 								<strong>Price: {attachment.price}</strong>
 							</div>
-							{attachment.included === '1' ? (
-								<InputGroup className='mb-3' style={{ width: '30%' }}>
-									<input
-										class='form-check-input'
-										type='checkbox'
-										value=''
-										id='flexCheckChecked'
-										checked
-									/>
-									<label class='form-check-label' for='flexCheckChecked'>
-										Remove
-									</label>
-								</InputGroup>
-							) : (
-								<InputGroup className='mb-3' style={{ width: '30%' }}>
-									<input
-										class='form-check-input'
-										type='checkbox'
-										value=''
-										id='flexCheckDefault'
-									/>
-									<label class='form-check-label' for='flexCheckDefault'>
-										Add to cart
-									</label>
-								</InputGroup>
-							)}
+
+							<InputGroup className='mb-3' style={{ width: '30%' }}>
+								<InputGroup.Checkbox
+									checked={attachment.included === '1'}
+									disabled={attachment.fixed === '1'}
+									aria-label='Checkbox for following text input'
+								/>
+								<span>Add to cart</span>
+							</InputGroup>
 						</div>
 					))}
 				</Modal.Body>

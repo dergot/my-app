@@ -1,6 +1,14 @@
 import React, { Component, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap';
+import {
+	Button,
+	Card,
+	Col,
+	Container,
+	Image,
+	InputGroup,
+	Row,
+} from 'react-bootstrap';
 import { ProductCard } from '../../components/ProductCard/productCard.js';
 import {
 	addItemInCart,
@@ -8,11 +16,15 @@ import {
 	deleteItemFromCart,
 } from '../../redux/cart/reducer.js';
 import { Counter } from '../../components';
+import _ from 'lodash';
 
 const url = `https://www.flexx.co/assets/camaleon_cms/image-not-found-4a963b95bf081c3ea02923dceaeb3f8085e1a654fc54840aac61a57a60903fef.png`;
 
 const CartPage = () => {
 	const items = useSelector((state) => state.cart.itemsInCart);
+	const attachmentsInCart = useSelector(
+		(state) => state.cart.itemsInCart.attachments
+	);
 	// console.log(items);
 	const dispatch = useDispatch();
 	const [total, setTotal] = useState(0);
